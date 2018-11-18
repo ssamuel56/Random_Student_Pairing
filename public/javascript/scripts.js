@@ -22,14 +22,26 @@ var view = {
     var studentsUl = document.querySelector('ul');
     studentsUl.innerHTML = '';
     hiddenStudentsInput.value= '';
-
     studentList.students.forEach(function(student, position) {
-    var studentLi = document.createElement('li');
-    var deletionButton = document.createElement('button')
-    deletionButton.type = "button"
-    deletionButton.innerHTML = "Delete"
+      var studentLi = document.createElement('li');
+      var deletionButton = document.createElement('button')
+      deletionButton.type = "button"
+      deletionButton.innerHTML = "button"
+      deletionButton.id = "button" + position;
       studentLi.id = position;
-      deletionButton.onclick = function() {studentList.students.splice(studentLi.id, 1)}
+      deletionButton.onclick = function() {
+        var elem = document.getElementById(position);
+        var butt = document.getElementById("button" + position);
+        console.log("hi");
+        elem.parentNode.removeChild(elem);
+        butt.parentNode.removeChild(butt);
+        studentList.students.splice(position);
+        view.displayStudents;
+        deletionButton.hidden = true;
+        console.log(studentList.students)
+        return false;
+        return this.displayStudents;
+      }
       hiddenStudentsInput.value += student.studentText + ',';
       studentLi.textContent = student.studentText;
       studentsUl.appendChild(studentLi);
