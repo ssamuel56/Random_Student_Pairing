@@ -25,10 +25,15 @@ var view = {
 
     studentList.students.forEach(function(student, position) {
     var studentLi = document.createElement('li');
+    var deletionButton = document.createElement('button')
+    deletionButton.type = "button"
+    deletionButton.innerHTML = "Delete"
       studentLi.id = position;
+      deletionButton.onclick = function() {studentList.students.splice(studentLi.id, 1)}
       hiddenStudentsInput.value += student.studentText + ',';
       studentLi.textContent = student.studentText;
       studentsUl.appendChild(studentLi);
+      studentsUl.appendChild(deletionButton);
     }, this);
   },
   setUpEventListeners: function() {
