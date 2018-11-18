@@ -12,6 +12,6 @@ post '/pair' do
 end
 
 get '/paired' do
-  studentlist = params[:studentlist]
+  studentlist = student_sample(params[:studentlist].chop.split(','))
   erb :paired, locals: {studentlist: studentlist}
 end
