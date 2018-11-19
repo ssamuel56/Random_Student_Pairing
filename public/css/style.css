@@ -53,7 +53,16 @@ form button{
 form button:hover{
   background: grey;
   cursor: pointer;
+}
 
+button:hover{
+  background: grey;
+  cursor: pointer;
+}
+
+form input:hover{
+  background: grey;
+  cursor: pointer;
 }
 
 form input{

@@ -10,8 +10,9 @@ var studentList = {
 var handlers = {
   addStudent: function() {
     var addStudentTextInput = document.getElementById('addStudentTextInput');
-    if (addStudentTextInput.value == '' || !/^[a-zA-Z\s]+$/.test(addStudentTextInput.value)) {
+    if (addStudentTextInput.value == '' || !/^[a-zA-Z][a-zA-Z\s]+$/.test(addStudentTextInput.value)) {
       alert("Please Enter a name")
+      addStudentTextInput.value = ''
     }else {
       studentList.addStudent(addStudentTextInput.value);
       addStudentTextInput.value = '';
