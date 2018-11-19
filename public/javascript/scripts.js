@@ -10,9 +10,13 @@ var studentList = {
 var handlers = {
   addStudent: function() {
     var addStudentTextInput = document.getElementById('addStudentTextInput');
-    studentList.addStudent(addStudentTextInput.value);
-    addStudentTextInput.value = '';
-    view.displayStudents();
+    if (addStudentTextInput.value == '') {
+      alert-warning("Please Enter a name")
+    }else {
+      studentList.addStudent(addStudentTextInput.value);
+      addStudentTextInput.value = '';
+      view.displayStudents();
+    }
   },
 }
 
@@ -21,7 +25,7 @@ var view = {
     var hiddenStudentsInput = document.getElementById('studentlist')
     var studentsUl = document.querySelector('ul');
     studentsUl.innerHTML = '';
-    hiddenStudentsInput.value= '';
+    hiddenStudentsInput.value = '';
     studentList.students.forEach(function(student, position) {
       var studentLi = document.createElement('li');
       var deletionButton = document.createElement('button')
@@ -32,21 +36,20 @@ var view = {
       deletionButton.onclick = function() {
         var elem = document.getElementById(position);
         var butt = document.getElementById("button" + position);
-        console.log("hi");
-        elem.parentNode.removeChild(elem);
+        studentsUl.removeChild(elem);
         butt.parentNode.removeChild(butt);
-        studentList.students.splice(position);
-        view.displayStudents;
-        deletionButton.hidden = true;
+        studentList.students.splice(position, 1);
+        hiddenStudentsInput.value -= elem.studentText;
         console.log(studentList.students)
+        view.displayStudents();
         return false;
-        return this.displayStudents;
-      }
+      };
       hiddenStudentsInput.value += student.studentText + ',';
       studentLi.textContent = student.studentText;
       studentsUl.appendChild(studentLi);
       studentsUl.appendChild(deletionButton);
     }, this);
+    console.log(studentList.students)
   },
   setUpEventListeners: function() {
     var studentsUl = document.querySelector('ul');
