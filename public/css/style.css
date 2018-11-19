@@ -1,0 +1,39 @@
+html{
+  background-color: #EAE6DA;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+
+}
+
+header{
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  text-align: center;
+  padding: 1em;
+border-style: groove;
+}
+
+form button{
+  position: relative;
+  bottom: 1.5em;
+  right: .1em;
+}
+
+#javascriptButtons{
+  display: flex;
+}

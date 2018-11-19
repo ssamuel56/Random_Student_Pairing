@@ -1,17 +1,19 @@
-<div>
+<div id="javascriptButtons">
   <input id="addStudentTextInput" type="text">
   <button onclick="handlers.addStudent()">Add</button>
 </div>
 
 <br>
 
-<div class="">
-  <form action="/pair" method="post">
+
+<form action="/pair" method="post">
+  <input type="submit" value="submit">
+  <div class="form">
     <ul id="list" name="students">
     </ul>
-    <input id="studentlist" type="hidden" name="studentlist">
-    <input type="submit" value="submit">
-  </form>
-</div>
+  </div>
+  <input id="studentlist" type="hidden" name="studentlist">
+</form>
+
 
   <script type="text/javascript" src="/javascript/scripts.js"></script>
