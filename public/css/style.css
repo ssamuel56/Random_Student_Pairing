@@ -25,7 +25,10 @@ ul{
 li{
   text-align: center;
   padding: 1em;
-border-style: groove;
+  border-style: dashed;
+  border-width: medium;
+  border-color: grey;
+  border-radius: 1em;
 }
 
 form button{

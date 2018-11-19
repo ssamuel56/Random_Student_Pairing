@@ -3,7 +3,7 @@
 <div class="">
   <ul>
   <%studentlist.each do |pair| %>
-  <li><%= pair[0] %>,<%= pair[1] %><%=pair[2] ? "," + pair[2] : ""%></li>
+  <li><%= pair[0] %>, <%= pair[1] %><%=pair[2] ? ", " + pair[2] : ""%></li>
   <%end%>
 </ul>
 </div>
