@@ -7,7 +7,9 @@ end
 
 post '/pair' do
   studentlist = params[:studentlist]
-  p studentlist
+  if studentlist.empty?
+    redirect'/'
+  end
   redirect 'paired?studentlist=' + studentlist
 end
 

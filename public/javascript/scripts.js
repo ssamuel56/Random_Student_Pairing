@@ -10,8 +10,8 @@ var studentList = {
 var handlers = {
   addStudent: function() {
     var addStudentTextInput = document.getElementById('addStudentTextInput');
-    if (addStudentTextInput.value == '') {
-      alert-warning("Please Enter a name")
+    if (addStudentTextInput.value == '' || !/^[a-zA-Z\s]+$/.test(addStudentTextInput.value)) {
+      alert("Please Enter a name")
     }else {
       studentList.addStudent(addStudentTextInput.value);
       addStudentTextInput.value = '';
@@ -30,7 +30,7 @@ var view = {
       var studentLi = document.createElement('li');
       var deletionButton = document.createElement('button')
       deletionButton.type = "button"
-      deletionButton.innerHTML = "Delete"
+      deletionButton.innerHTML = "x"
       deletionButton.id = "button" + position;
       studentLi.id = position;
       deletionButton.onclick = function() {
@@ -39,8 +39,6 @@ var view = {
         studentsUl.removeChild(elem);
         butt.parentNode.removeChild(butt);
         studentList.students.splice(position, 1);
-        hiddenStudentsInput.value -= elem.studentText;
-        console.log(studentList.students)
         view.displayStudents();
         return false;
       };
@@ -57,13 +55,6 @@ var view = {
     studentsUl.addEventListener('click', function(event) {
       var elementClicked = event.target;
     });
-  }
-};
-
-var hiddenList = {
-  addingHiddenStudents: function() {
-    var hiddenStudentsInput = document.getElementById('studentlist')
-    hiddenStudentInput.innerHTML += studentList.students
   }
 };
 
