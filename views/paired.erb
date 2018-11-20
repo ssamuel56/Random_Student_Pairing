@@ -1,7 +1,12 @@
 <button onclick="window.location.href='/'">Reset</button>
 
+<form class="" action="/newpair" method="post">
+  <button class="newpair" type="submit" name="studentlist">New Pair</button>
+  <input type="hidden" name="studentlist" value="<%= studentlist %>">
+</form>
+
 <ul id="finalList">
-  <%studentlist.each do |pair| %>
+  <%paired_students.each do |pair| %>
     <li><%= pair[0] %>, <%= pair[1] %><%=pair[2] ? ", " + pair[2] : ""%></li>
     <br>
   <%end%>

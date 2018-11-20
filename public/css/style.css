@@ -65,7 +65,18 @@ form input:hover{
   cursor: pointer;
 }
 
-form input{
+#submit{
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  font-weight: 200;
+  font-size: .8em;
+  border-width: medium;
+  border-color: grey;
+  border-radius: 1em;
+  position: relative;
+  left: 4.7em;
+}
+
+#studentlist{
   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   font-weight: 200;
   font-size: .8em;
@@ -93,4 +104,10 @@ form input{
 
 #finalList li{
   padding-top: 1.5em;
+}
+
+.newpair{
+  position: relative;
+  left: 7em;
+  bottom: 1.75em;
 }

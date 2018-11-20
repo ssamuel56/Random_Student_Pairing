@@ -1,0 +1,13 @@
+<button onclick="window.location.href='/'">Reset</button>
+
+<form class="" action="index.html" method="post">
+  <button type="button" class="newpair" onclick="window.location.reload()">New Pair</button>
+</form>
+
+
+<ul id="finalList">
+  <%studentlist.each do |pair| %>
+    <li><%= pair[0] %>, <%= pair[1] %><%=pair[2] ? ", " + pair[2] : ""%></li>
+    <br>
+  <%end%>
+</ul>
